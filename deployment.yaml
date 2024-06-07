@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-ip
+  labels:
+    app: web-app-ip
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-app-ip
+  template:
+    metadata:
+      labels:
+        app: web-app-ip
+    spec:
+      containers:
+      - name: web-app-ip
+        image: darshanfoski/webappip
+        ports:
+        - containerPort: 8080
+  
